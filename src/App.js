@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { NavLink, Switch, Route } from 'react-router-dom';
 
+
 const App = () => (
   <div className='app'>
     <h1>Portfolio Test Website</h1>
@@ -50,4 +51,4 @@ const Main = () => (
   </Switch>
 );
 
-export default App;
+export default (App);
