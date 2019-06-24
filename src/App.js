@@ -2,53 +2,36 @@ import React from 'react';
 import './App.css';
 import { NavLink, Switch, Route } from 'react-router-dom';
 
+import Home from './screens/Home'
+import About from './screens/About'
+import Contact from './screens/Contact'
 
-const App = () => (
-  <div className='app'>
-    <h1>Portfolio Test Website</h1>
-    <Navigation />
-    <Main />
-   </div>
-);
+export default function App() {
+  return (
 
-const Navigation = () => (
-  <nav>
-    <ul>
-      <li><NavLink exact activeClassName="current" to='/'>Home</NavLink></li>
-      <li><NavLink exact activeClassName="current" to='/about'>About</NavLink></li>
-      <li><NavLink exact activeClassName="current" to='/contact'>Contact</NavLink></li>
-    </ul>
-  </nav>
-);
+    <div>
+      <nav>
+        <ul>
+          <li><NavLink exact activeClassName="current" to='/'>Home</NavLink></li>
+          <li><NavLink exact activeClassName="current" to='/about'>About</NavLink></li>
+          <li><NavLink exact activeClassName="current" to='/contact'>Contact</NavLink></li>
+        </ul>
+      </nav>
 
-const Home = () => (
-  <div className='home'>
-    <h1>Welcome to my portfolio website</h1>
-    <p> Browse around to learn more.</p>
-  </div>
-);
+      <div className='app'>
+        <h1>Lisa Mae</h1>
+        <p>front-end focused full-stack developer</p>
+       </div>
+          <main>
+            {/* Home */}
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/:id" component={About} />
+              <Route path="/:id" component={Contact} />
+            </Switch>
 
-const About = () => (
-  <div className='about'>
-    <h1>About</h1>
-    <p>Ipsum dolor dolorem consectetur est velit fugiat. Dolorem provident corporis fuga saepe distinctio ipsam? Et quos harum excepturi dolorum molestias?</p>
-    <p>Ipsum dolor dolorem consectetur est velit fugiat. Dolorem provident corporis fuga saepe distinctio ipsam? Et quos harum excepturi dolorum molestias?</p>
-  </div>
-);
+          </main>
 
-const Contact = () => (
-  <div className='contact'>
-    <h1>Contact</h1>
-    <p>You can reach me via email: <strong>hello@example.com</strong></p>
-  </div>
-);
-
-const Main = () => (
-  <Switch>
-    <Route exact path='/' component={Home}></Route>
-    <Route exact path='/about' component={About}></Route>
-    <Route exact path='/contact' component={Contact}></Route>
-  </Switch>
-);
-
-export default (App);
+        </div>
+  )
+}

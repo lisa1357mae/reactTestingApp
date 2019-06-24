@@ -1,21 +1,8 @@
 
-html {
-  box-sizing: border-box;
+body {
+
   font-family: 'Covered By Your Grace', cursive;
   background-color: #e4e5cc;
-}
-
-
-*, *::before, *::after {
-  box-sizing: inherit;
-  padding: 0;
-  margin: 0;
-}
-
-.app {
-  width: 960px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 nav ul {
@@ -23,6 +10,7 @@ nav ul {
   display: flex;
   background-color: purple;
   margin-bottom: 20px;
+  padding: 50px;
 }
 
 nav ul li {
@@ -44,4 +32,14 @@ h1 {
 
 p {
   margin-bottom: 15px;
+}
+
+.dynamic-treemap-style {
+  padding-left: 200px;
+  justify-content: flex-start;
+  width: 200px;
+ background-color: red;
+ color: white;
+ border: 1px solid black;
+
 }
